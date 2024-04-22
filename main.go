@@ -98,6 +98,7 @@ func main() {
 
 	started := time.Now()
 
+	// Helath check function
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusOK).JSON(fiber.Map{"started": started,
 			"uptime": strconv.FormatInt(time.Now().Unix()-started.Unix(), 10) + " sec"})
