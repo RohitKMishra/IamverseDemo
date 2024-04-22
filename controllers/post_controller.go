@@ -9,9 +9,11 @@ import (
 
 	db "github.com/RohitKMishra/IamverseDemo/database"
 	"github.com/RohitKMishra/IamverseDemo/models"
+	"github.com/RohitKMishra/IamverseDemo/services"
 	"github.com/gofiber/fiber/v2"
 	uuid "github.com/google/uuid"
 	"github.com/lib/pq"
+
 	// "github.com/RohitKMishra/codeapto-backend-go/services"
 	"gorm.io/gorm"
 )
