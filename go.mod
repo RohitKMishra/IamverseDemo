@@ -1,4 +1,4 @@
-module github.com/nyshnt/codeapto-backend-go
+module github.com/RohitKMishra/IamverseDemo
 
 go 1.20
 

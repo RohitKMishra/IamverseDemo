@@ -3,9 +3,9 @@ package userroutes
 import (
 	// db is an alias for package codeapto-backend/database
 
+	"github.com/RohitKMishra/IamverseDemo/controllers"
+	"github.com/RohitKMishra/IamverseDemo/util"
 	"github.com/gofiber/fiber/v2"
-	"github.com/nyshnt/codeapto-backend-go/controllers"
-	"github.com/nyshnt/codeapto-backend-go/util"
 )
 
 // SetupUserRoutes func sets up all the user routes
