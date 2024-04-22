@@ -2,12 +2,15 @@ package database
 
 import (
 	// "errors"
+	"errors"
 	"fmt"
 	"log"
 	"os"
 
 	// "github.com/google/uuid"
-	"github.com/nyshnt/codeapto-backend-go/models"
+	"github.com/RohitKMishra/IamverseDemo/models"
+	"github.com/RohitKMishra/IamverseDemo/notifications.go"
+	"github.com/google/uuid"
 
 	"github.com/joho/godotenv"
 	"gorm.io/driver/postgres"
@@ -25,56 +28,56 @@ type DBHandlerImpl struct {
 }
 
 // SaveNotification saves a notification in the database.
-// func (h *DBHandlerImpl) SaveNotification(notification *notifications.Notification) error {
-// 	if h.DB == nil {
-// 		return errors.New("DB instance is nil")
-// 	}
+func (h *DBHandlerImpl) SaveNotification(notification *notifications.Notification) error {
+	if h.DB == nil {
+		return errors.New("DB instance is nil")
+	}
 
-// 	if notification == nil {
-// 		return errors.New("notification is nil")
-// 	}
+	if notification == nil {
+		return errors.New("notification is nil")
+	}
 
-// 	// Ensure the notification ID is set (assuming it's a required field)
-// 	if notification.NotificationID == uuid.Nil {
-// 		return errors.New("notification ID is not set")
-// 	}
+	// Ensure the notification ID is set (assuming it's a required field)
+	if notification.NotificationID == uuid.Nil {
+		return errors.New("notification ID is not set")
+	}
 
-// 	result := h.DB.Create(notification)
-// 	if result.Error != nil {
-// 		// Print the notification details for debugging
-// 		fmt.Printf("Failed to create notification: %+v\n", notification)
+	result := h.DB.Create(notification)
+	if result.Error != nil {
+		// Print the notification details for debugging
+		fmt.Printf("Failed to create notification: %+v\n", notification)
 
-// 		// Handle the error and return with additional context
-// 		return fmt.Errorf("failed to save notification: %w", result.Error)
-// 	}
+		// Handle the error and return with additional context
+		return fmt.Errorf("failed to save notification: %w", result.Error)
+	}
 
-// 	return nil
-// }
+	return nil
+}
 
 // DeleteNotification deletes a notification from the database.
-// func (h *DBHandlerImpl) DeleteNotification(recipientID, notificationID uuid.UUID) error {
-// 	fmt.Println("inside delte notification database file")
-// 	// Implement logic to delete the notification from the database
-// 	err := h.DB.Where("recipient_id = ? AND notification_id = ?", recipientID, notificationID).Delete(&notifications.Notification{}).Error
-// 	if err != nil {
-// 		return fmt.Errorf("failed to delete notification: %w", err)
-// 	}
+func (h *DBHandlerImpl) DeleteNotification(recipientID, notificationID uuid.UUID) error {
+	fmt.Println("inside delte notification database file")
+	// Implement logic to delete the notification from the database
+	err := h.DB.Where("recipient_id = ? AND notification_id = ?", recipientID, notificationID).Delete(&notifications.Notification{}).Error
+	if err != nil {
+		return fmt.Errorf("failed to delete notification: %w", err)
+	}
 
-// 	return err
-// }
+	return err
+}
 
 // GetNotificationByID retrieves a notification by its ID for a specific recipient.
-// func (h *DBHandlerImpl) GetNotificationByID(recipientID, notificationID uuid.UUID) (*notifications.Notification, error) {
-// 	// Implement logic to fetch the notification by ID from the database
-// 	// Example using GORM:
-// 	var notification notifications.Notification
-// 	err := h.DB.Where("recipient_id = ? AND notification_id = ?", recipientID, notificationID).First(&notification).Error
-// 	if err != nil {
-// 		return nil, fmt.Errorf("failed to get notification by ID: %w", err)
-// 	}
+func (h *DBHandlerImpl) GetNotificationByID(recipientID, notificationID uuid.UUID) (*notifications.Notification, error) {
+	// Implement logic to fetch the notification by ID from the database
+	// Example using GORM:
+	var notification notifications.Notification
+	err := h.DB.Where("recipient_id = ? AND notification_id = ?", recipientID, notificationID).First(&notification).Error
+	if err != nil {
+		return nil, fmt.Errorf("failed to get notification by ID: %w", err)
+	}
 
-// 	return &notification, nil
-// }
+	return &notification, nil
+}
 
 // ConnectToDB connects the server with database
 func ConnectToDB() error {
@@ -131,24 +134,24 @@ func ConnectToDB() error {
 		// &models.HonorAward{},
 		&models.Follower{},
 		&models.Following{},
-		&models.CareerBreak{},
-		&models.VolunteerExperience{},
-		&models.Publication{},
-		&models.Patent{},
-		&models.TestScore{},
-		&models.Organization{},
-		&models.Cause{},
-		&models.CauseResponse{},
-		&models.Recommendation{},
+		// &models.CareerBreak{},
+		// &models.VolunteerExperience{},
+		// &models.Publication{},
+		// &models.Patent{},
+		// &models.TestScore{},
+		// &models.Organization{},
+		// &models.Cause{},
+		// &models.CauseResponse{},
+		// &models.Recommendation{},
 		// &models.FeaturedSection{},
 		// &models.FeaturedItem{},
 		// &notifications.Notification{},
-		&models.Group{},
-		&models.GroupMember{},
-		&models.GroupPost{},
-		&models.GroupPostLike{},
-		&models.GroupPostComment{},
-		&models.GroupPostCommentReply{},
+		// &models.Group{},
+		// &models.GroupMember{},
+		// &models.GroupPost{},
+		// &models.GroupPostLike{},
+		// &models.GroupPostComment{},
+		// &models.GroupPostCommentReply{},
 	}
 
 	log.Print("Running the migrations...")

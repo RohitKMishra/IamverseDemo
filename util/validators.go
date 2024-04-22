@@ -3,7 +3,7 @@ package util
 import (
 	"regexp"
 
-	"github.com/nyshnt/codeapto-backend-go/models"
+	"github.com/RohitKMishra/IamverseDemo/models"
 
 	valid "github.com/asaskevich/govalidator"
 )
