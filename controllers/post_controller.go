@@ -7,12 +7,12 @@ import (
 	"strings"
 	"time"
 
+	db "github.com/RohitKMishra/IamverseDemo/database"
+	"github.com/RohitKMishra/IamverseDemo/models"
 	"github.com/gofiber/fiber/v2"
 	uuid "github.com/google/uuid"
 	"github.com/lib/pq"
-	db "github.com/nyshnt/codeapto-backend-go/database"
-	"github.com/nyshnt/codeapto-backend-go/models"
-	// "github.com/nyshnt/codeapto-backend-go/services"
+	// "github.com/RohitKMishra/codeapto-backend-go/services"
 	"gorm.io/gorm"
 )
 

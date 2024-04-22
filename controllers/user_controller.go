@@ -9,17 +9,17 @@ import (
 	"math/rand"
 	"time"
 
+	db "github.com/RohitKMishra/IamverseDemo/database"
+	"github.com/RohitKMishra/IamverseDemo/models"
 	"github.com/google/uuid"
 	"github.com/lib/pq"
-	db "github.com/nyshnt/codeapto-backend-go/database"
-	"github.com/nyshnt/codeapto-backend-go/models"
 	// "github.com/nyshnt/codeapto-backend-go/notifications"
 	// "github.com/nyshnt/codeapto-backend-go/services"
 	"gorm.io/gorm"
 
 	"fmt"
 
-	"github.com/nyshnt/codeapto-backend-go/util"
+	"github.com/RohitKMishra/IamverseDemo/util"
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gofiber/fiber/v2"

@@ -7,11 +7,11 @@ import (
 	// "strings"
 	"time"
 
+	router "github.com/RohitKMishra/IamverseDemo/routes"
+
+	"github.com/RohitKMishra/IamverseDemo/database"
+	"github.com/RohitKMishra/IamverseDemo/util"
 	"github.com/joho/godotenv"
-	"github.com/nyshnt/codeapto-backend-go/controllers"
-	"github.com/nyshnt/codeapto-backend-go/database"
-	router "github.com/nyshnt/codeapto-backend-go/routes"
-	"github.com/nyshnt/codeapto-backend-go/util"
 	"github.com/robfig/cron/v3"
 
 	"github.com/gofiber/fiber/v2"
@@ -91,7 +91,6 @@ func main() {
 	// Connect to Postgres
 	database.ConnectToDB()
 	// Connect to Redis
-	database.InitRedisClient()
 
 	app := CreateServer()
 

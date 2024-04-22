@@ -5,8 +5,8 @@ import (
 	"strings"
 	"time"
 
-	db "github.com/nyshnt/codeapto-backend-go/database"
-	"github.com/nyshnt/codeapto-backend-go/models"
+	db "github.com/RohitKMishra/IamverseDemo/database"
+	"github.com/RohitKMishra/IamverseDemo/models"
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gofiber/fiber/v2"
