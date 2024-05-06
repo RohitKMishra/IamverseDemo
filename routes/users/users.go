@@ -126,6 +126,9 @@ func SetupUserRoutes(USER fiber.Router) {
 	USER.Get("/posts/:postID/reaction", controllers.GetUserReactionByPostID)
 	USER.Get("/getEmojiByEmojiName/:reactionName", controllers.GetEmojiDetailsByReactionName)
 
+	// New route for calling the Stripe payment API
+	USER.Post("/make_payment", controllers.MakeStripePayment)
+
 	// Skill
 
 	// USER.Post("/skill_creation", controllers.CreateSkill)

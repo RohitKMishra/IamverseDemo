@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 	"strconv"
+
 	// "strings"
 	"time"
 
@@ -16,7 +17,6 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
-	// "github.com/gofiber/fiber/v2/middleware/cors"
 )
 
 // CreateServer creates a new Fiber instance
@@ -29,17 +29,6 @@ func CreateServer() *fiber.App {
 	}))
 	return app
 }
-
-// func loadEnvFile(environment string) error {
-// 	var envFile string
-// 	if environment == "development" {
-// 		envFile = ".env.prod"
-// 	} else {
-// 		envFile = ".env"
-// 	}
-
-// 	return godotenv.Load(envFile)
-// }
 
 func loadEnvFile(environment string) error {
 	var envFile string
