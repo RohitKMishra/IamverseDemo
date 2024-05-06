@@ -23,6 +23,7 @@ require (
 	github.com/robfig/cron v1.2.0 // indirect
 	github.com/savsgio/gotils v0.0.0-20230208104028-c358bd845dee // indirect
 	github.com/stretchr/testify v1.8.4 // indirect
+	github.com/stripe/stripe-go/v72 v72.122.0 // indirect
 	golang.org/x/net v0.21.0 // indirect
 )
 
